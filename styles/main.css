@@ -1,6 +1,6 @@
 body {
-    width: 100vw;
-    height: 100vh;
+    width: 99vw;
+    height: 98vh;
 }
 
 header {
@@ -63,13 +63,9 @@ main {
 footer {
 
     height: 5.9vh;
-    width: 100vw;
+    width: 99vw;
     background-color: #212529;
     color: whitesmoke;
-
-    img {
-        border-radius: 50%;
-    }
 
     a {
         text-decoration: none;
