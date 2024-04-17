@@ -1,0 +1,78 @@
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+header {
+    background-color: white;
+    color: black;
+}
+
+main {
+    background-color: #F8F8F8;
+    position: relative;
+
+    .banner {
+
+        .carousel-caption h2 {
+            font-size: 4.5rem;
+            color: whitesmoke;
+        }
+
+        .carousel-caption p {
+            font-size: 1.5rem;
+            color: whitesmoke;
+        }
+
+        .carousel-item img {
+            width: 100vw;
+            height: 40vh;
+            object-fit: cover;
+        }
+
+    }
+
+    .inputs {
+        .input-group-text {
+            border: none;
+        }
+    }
+
+    .cards {
+        margin-bottom: 3.5vh;
+
+        .tarjetas {
+            border: 2px solid #330113;
+            transition: ease .2s;
+
+            &:hover {
+                transform: scale(1.05);
+                box-shadow: 0 0 10px black;
+                margin: 5vh;
+            }
+        }
+
+        .irDetails {
+            background-color: #DA096C;
+            color: white;
+            font-weight: bold;
+        }
+    }
+}
+
+footer {
+    
+    height: 5.9vh;
+    width: 100vw;
+    background-color: #212529;
+    color: whitesmoke;
+
+    img {
+        border-radius: 50%;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+}
