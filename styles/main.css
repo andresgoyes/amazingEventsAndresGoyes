@@ -1,11 +1,13 @@
-body {
-    width: 99vw;
-    height: 98vh;
+header {
+    .navbar-dark .navbar-nav .nav-link:hover {
+        color: orange;
+    }
 }
 
-header {
-    background-color: white;
-    color: black;
+
+body {
+    width: 100%;
+    height: 100vh;
 }
 
 main {
@@ -17,17 +19,36 @@ main {
         .carousel-caption h2 {
             font-size: 4.5rem;
             color: whitesmoke;
+            filter: contrast(200%) drop-shadow(0 0 5px black);
         }
 
         .carousel-caption p {
             font-size: 1.5rem;
             color: whitesmoke;
+            filter: contrast(200%) drop-shadow(0 0 5px black);
+        }
+
+        .carousel-2 {
+            h2 {
+                color: whitesmoke !important;
+                filter: contrast(200%) drop-shadow(0 0 5px #ffd700);
+            }
+
+            p {
+                color: whitesmoke !important;
+                filter: contrast(200%) drop-shadow(0 0 5px #ffd700);
+            }
+
         }
 
         .carousel-item img {
             width: 100vw;
-            height: 40vh;
+            height: 36.3vh;
             object-fit: cover;
+        }
+
+        .carousel-control-next, .carousel-control-prev, .carousel-indicators {
+            filter: invert(90%);
         }
 
     }
@@ -39,36 +60,46 @@ main {
     }
 
     .cards {
-        margin-bottom: 3.5vh;
+        margin-bottom: 1.4vh;
 
-        .tarjetas {
+        .cards-i {
             border: 2px solid #330113;
             transition: ease .2s;
 
             &:hover {
                 transform: scale(1.05);
                 box-shadow: 0 0 10px black;
-                margin: 5vh;
+                margin: 4vh;
             }
         }
 
-        .irDetails {
-            background-color: #DA096C;
-            color: white;
+        .go-details {
+            background-color: #D90368;
+            color: whitesmoke;
             font-weight: bold;
         }
     }
 }
 
 footer {
-
-    height: 5.9vh;
-    width: 99vw;
+    height: 5.0vh;
+    width: 100%;
     background-color: #212529;
     color: whitesmoke;
 
+    .img-fluid {
+        height: 4.5vh;
+        width: 4.5vh;
+    }
+
     a {
+        color: white;
         text-decoration: none;
+        transition: ease .1s;
+
+        &:hover {
+            filter: drop-shadow(0 0 10px #D90368);
+        }
     }
 
 }
