@@ -8,11 +8,11 @@ header {
 body {
     width: 100%;
     height: 100vh;
+    background-color: whitesmoke;
 }
 
 main {
-    background-color: #F8F8F8;
-    position: relative;
+    background-color: whitesmoke;
 
     .banner {
 
@@ -43,11 +43,13 @@ main {
 
         .carousel-item img {
             width: 100vw;
-            height: 36.3vh;
+            height: 37.5vh;
             object-fit: cover;
         }
 
-        .carousel-control-next, .carousel-control-prev, .carousel-indicators {
+        .carousel-control-next,
+        .carousel-control-prev,
+        .carousel-indicators {
             filter: invert(90%);
         }
 
@@ -55,12 +57,13 @@ main {
 
     .inputs {
         .input-group-text {
+            background-color: whitesmoke;
             border: none;
         }
     }
 
     .cards {
-        margin-bottom: 1.4vh;
+        margin-bottom: 2vh;
 
         .cards-i {
             border: 2px solid #330113;
@@ -79,10 +82,32 @@ main {
             font-weight: bold;
         }
     }
+
+    .container-form {
+        form {
+            background-color: rgb(142, 131, 131);
+            padding: 1vw;
+            border-radius: 10px;
+            color: whitesmoke;
+
+            button {
+                background-color: #D90368;
+                color: whitesmoke;
+                font-weight: bold;
+
+                &:hover {
+                    transition: ease .2s;
+                    background-color: whitesmoke;
+                    color: #D90368;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
 }
 
 footer {
-    height: 5.0vh;
+    height: 5vh;
     width: 100%;
     background-color: #212529;
     color: whitesmoke;
@@ -93,7 +118,7 @@ footer {
     }
 
     a {
-        color: white;
+        color: whitesmoke;
         text-decoration: none;
         transition: ease .1s;
 
