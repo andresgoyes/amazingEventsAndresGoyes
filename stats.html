@@ -45,67 +45,144 @@
         </nav>
     </header>
     <main class="mb-3">
-        <table class="table mt-5">
-            <thead class="table-dark">
-                <tr>
-                    <th scope="col" colspan="3">
-                        Events Statistics
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Events with highest % of assistance</td>
-                    <td>Events with lowest % of assistance</td>
-                    <td>Events with large capacity</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th class="table-dark" scope="col" colspan="3">
-                        Upcoming events statistics by category
-                    </th>
-                </tr>
-                <tr>
-                    <td>Categories</td>
-                    <td>Revenues</td>
-                    <td>Percentage of assistance</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th class="table-dark" scope="col" colspan="3">
-                        Past events statistics by category
-                    </th>
-                </tr>
-                <tr>
-                    <td>Categories</td>
-                    <td>Revenues</td>
-                    <td>Percentage of assistance</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
+        <section class="banner">
+            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4"
+                        aria-label="Slide 5"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="5000">
+                        <img src="./images/optional_banner_1.jpg" class="d-block w-100" alt="Home">
+                        <div
+                            class="carousel-caption d-flex h-100 flex-column justify-content-center align-items-center">
+                            <h2>Amazing Events</h2>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="./images/optional_banner_2.jpg" class="d-block w-100" alt="Upcoming Events">
+                        <div
+                            class="carousel-caption d-flex h-100 flex-column justify-content-center align-items-center carousel-2">
+                            <h2>Upcoming Events</h2>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="./images/optional_banner_3.jpg" class="d-block w-100" alt="Past Events">
+                        <div
+                            class="carousel-caption d-flex h-100 flex-column justify-content-center align-items-center">
+                            <h2>Past Events</h2>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="./images/optional_banner_4.jpg" class="d-block w-100" alt="Contact">
+                        <div
+                            class="carousel-caption d-flex h-100 flex-column justify-content-center align-items-center">
+                            <h2>Contact</h2>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="./images/optional_banner_5.jpg" class="d-block w-100" alt="Stats">
+                        <div
+                            class="carousel-caption d-flex h-100 flex-column justify-content-center align-items-center">
+                            <h2>Stats</h2>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+        <section class="row justify-content-center py-5 w-100 tablas">
+            <div class="table-responsive col-md-10">
+                <table class="table table-striped">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col" colspan="3">
+                                Events Statistics
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Events with highest % of assistance</td>
+                            <td>Events with lowest % of assistance</td>
+                            <td>Events with large capacity</td>
+                        </tr>
+                        <tr>
+                            <td>.</td>
+                            <td>.</td>
+                            <td>.</td>
+                        </tr>
+                        <tr>
+                            <td>.</td>
+                            <td>.</td>
+                            <td>.</td>
+                        </tr>
+                        <tr>
+                            <th class="table-dark" scope="col" colspan="3">
+                                Upcoming events statistics by category
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>Categories</td>
+                            <td>Revenues</td>
+                            <td>Percentage of assistance</td>
+                        </tr>
+                        <tr>
+                            <td>.</td>
+                            <td>.</td>
+                            <td>.</td>
+                        </tr>
+                        <tr>
+                            <td>.</td>
+                            <td>.</td>
+                            <td>.</td>
+                        </tr>
+                        <tr>
+                            <th class="table-dark" scope="col" colspan="3">
+                                Past events statistics by category
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>Categories</td>
+                            <td>Revenues</td>
+                            <td>Percentage of assistance</td>
+                        </tr>
+                        <tr>
+                            <td>.</td>
+                            <td>.</td>
+                            <td>.</td>
+                        </tr>
+                        <tr>
+                            <td>.</td>
+                            <td>.</td>
+                            <td>.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
     <footer class="d-flex justify-content-between align-items-center px-2">
         <div class="d-flex">
@@ -119,7 +196,7 @@
                 <img src="./images/ig_logo.png" alt="Instagram" class="img-fluid" width="40" height="40">
             </a>
         </div>
-        <p class="pt-3 fs-6">Cohorte 2 - Andres Goyes</p>
+        <p class="pt-3 fs-6">Cohort 3 - Andres Goyes</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

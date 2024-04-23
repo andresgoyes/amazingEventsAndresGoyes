@@ -83,6 +83,13 @@ main {
         }
     }
 
+    .tablas {
+        thead, th{            
+            color: white;
+            text-align: center;
+        }
+    }
+
     .container-form {
         form {
             background-color: rgb(142, 131, 131);
