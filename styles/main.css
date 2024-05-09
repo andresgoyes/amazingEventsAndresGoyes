@@ -62,7 +62,6 @@ main {
     }
 
     .cards {
-        margin-bottom: 2vh;
 
         .cards-i {
             border: 2px solid #330113;
@@ -79,6 +78,10 @@ main {
             background-color: #D90368;
             color: whitesmoke;
             font-weight: bold;
+
+            &:hover {
+                box-shadow: 0 0 10px black;
+            }
         }
     }
 
