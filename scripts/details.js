@@ -195,104 +195,34 @@ const data = {
     ],
 };
 
-let urlDetails = new URL("http://localhost:5500/details.html");
-
-let inputSearch = document.querySelector(".form-control");
-let form = document.querySelector("form");
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    if (inputSearch.value == "") {
-        alert("What do you need?. Let us help you find it!");
-    }
-});
-
-let cardsHome = document.getElementById("cardsHome");
-cards(data.events, cardsHome);
-
-let boxCheck = document.querySelector(".checkBox");
-let arrayCategories = [];
+let id = window.location.href;
+id = new URL(id).searchParams.get("id");
+let container = document.getElementById("eventContainer");
+let card = document.createElement("div");
+card.className = "card mb-3 w-100 h-100";
 for (let event of data.events) {
-    if (!arrayCategories.includes(event.category))
-        arrayCategories.push(event.category);
-}
-
-for (let category of arrayCategories) {
-    let inputCheckbox = document.createElement("div");
-    inputCheckbox.innerHTML = `
-    <input class="form-check-input mt-0 inputCheckbox" id="${category}" type="checkbox" value="${category}" name="${category}" aria-label="${category}">
-    <label for="${category}" class="ms-2">${category}</label>`;
-    inputCheckbox.className = "input-group-text";
-    boxCheck.appendChild(inputCheckbox);
-}
-
-function cards(array, cardsHome) {
-    cardsHome.innerHTML = "";
-    for (let i = 0; i < array.length; i++) {
-        let card = document.createElement("div");
-        let urlTemp = urlDetails + "?id=" + array[i]._id;
+    if (event._id == id) {
+        let assistanceText = event.assistance ? `<p><strong>Assistance:</strong> ${event.assistance}</p>` : '';
+        let estimateText = event.estimate ? `<p><strong>Estimate:</strong> ${event.estimate}</p>` : '';
         card.innerHTML = `
-        <div class="card me-3 my-1 h-100 cards-i" style="width: 18rem">
-            <img src="${array[i].image}" class="card-img-top" alt="${array[i].name}" style="height: 20vh; object-fit: cover;"/>
-            <div class="card-body text-center d-flex flex-column justify-content-around">
-                <h5 class="card-title">${array[i].name}</h5>
-                <p class="card-text">
-                    ${array[i].description}
-                </p>
-                <div class="d-flex justify-content-around align-items-baseline">
-                    <p>US ${array[i].price} USD</p>
-                    <a href="${urlTemp}" class="btn go-details">Details</a>                    
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="${event.image}" class="img-fluid rounded-start" alt="${event.name}">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h2>${event.name}</h2>
+                    <p><strong>Description:</strong> ${event.description}</p>                    
+                    <p><strong>Date:</strong> ${event.date}</p>
+                    <p><strong>Place:</strong> ${event.place}</p>                    
+                    <p><strong>Category:</strong> ${event.category}</p>
+                    <p><strong>Capacity:</strong> ${event.capacity}</p>
+                    ${estimateText}
+                    ${assistanceText}
+                    <p><strong>Price:</strong> $${event.price}</p>
                 </div>
             </div>
-        </div>
-        `;
-        card.classList.add("my-3");
-        cardsHome.appendChild(card);
+        </div>`;
+        container.appendChild(card);
     }
 }
-
-function filterEvents() {
-    const searchText = inputSearch.value.trim().toLowerCase();
-    const selectedCheckboxes = [...document.querySelectorAll("input[type=checkbox]:checked")].map(checkbox => checkbox.value);
-
-    let filteredEvents = data.events.filter(event =>
-        event.name.toLowerCase().includes(searchText) ||
-        event.description.toLowerCase().includes(searchText)
-    );
-
-    if (selectedCheckboxes.length > 0) {
-        filteredEvents = filteredEvents.filter(event =>
-            selectedCheckboxes.includes(event.category)
-        );
-    }
-
-    if (filteredEvents.length > 0) {
-        cards(filteredEvents, cardsHome); // Use filtered events
-    } else {
-        showAlert("No events match the filters");
-    }
-}
-
-function showAlert(message) {
-    cardsHome.innerHTML = ""; // Ensure cardsHome is used to display the alert
-    const alert = document.createElement("div");
-    alert.className = "alert alert-info p-4 my-5";
-    alert.setAttribute("role", "alert");
-    alert.innerText = message;
-    cardsHome.appendChild(alert); // Append to cardsHome
-}
-
-inputSearch.addEventListener("input", () => {
-    if (inputSearch.value.trim() === "" && document.querySelectorAll("input[type=checkbox]:checked").length === 0) {
-        cards(data.events, cardsHome);
-    } else {
-        filterEvents();
-    }
-});
-
-boxCheck.addEventListener("change", () => {
-    if (inputSearch.value.trim() === "" && document.querySelectorAll("input[type=checkbox]:checked").length === 0) {
-        cards(data.events, cardsHome);
-    } else {
-        filterEvents();
-    }
-});

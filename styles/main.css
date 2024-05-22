@@ -85,6 +85,29 @@ main {
         }
     }
 
+    .card {
+        margin: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-body h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .card-body p {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .text-warning {
+        color: #ffc107 !important;
+    }
+
+    .text-info {
+        color: #17a2b8 !important;
+    }
+
     .tablas {
 
         thead,
