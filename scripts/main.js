@@ -266,19 +266,19 @@ function filterEvents() {
     }
 
     if (filteredEvents.length > 0) {
-        cards(filteredEvents, cardsHome); // Use filtered events
+        cards(filteredEvents, cardsHome);
     } else {
         showAlert("No events match the filters");
     }
 }
 
 function showAlert(message) {
-    cardsHome.innerHTML = ""; // Ensure cardsHome is used to display the alert
+    cardsHome.innerHTML = "";
     const alert = document.createElement("div");
     alert.className = "alert alert-info p-4 my-5";
     alert.setAttribute("role", "alert");
     alert.innerText = message;
-    cardsHome.appendChild(alert); // Append to cardsHome
+    cardsHome.appendChild(alert);
 }
 
 inputSearch.addEventListener("input", () => {
