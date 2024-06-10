@@ -86,7 +86,8 @@ main {
     }
 
     .cardDetails{
-        border: 2px solid #330113;        
+        background-color: white;
+        border: 2px solid #330113;             
     }
 
     .card {
@@ -123,7 +124,7 @@ main {
 
     .container-form {
         form {
-            background-color: rgb(142, 131, 131);
+            background-color: #212529;
             padding: 1vw;
             border-radius: 10px;
             color: whitesmoke;
