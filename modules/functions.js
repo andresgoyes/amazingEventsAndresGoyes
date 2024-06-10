@@ -99,3 +99,103 @@ export function renderEvent(events, id, container) {
         }
     }
 }
+
+export function filterPastEvents(array, currentDate) {
+    return array.filter(event => new Date(event.date) < new Date(currentDate));
+}
+
+export function filterUpcomingEvents(array, currentDate) {
+    return array.filter(event => new Date(event.date) > new Date(currentDate));
+}
+
+export function highestAssistance(array, currentDate) {
+    const pastEvents = filterPastEvents(array, currentDate);
+    let highestAssistancePercentage = 0;
+    let nameHighAssistanceEvent = '';
+    pastEvents.forEach(event => {
+        const percentage = (event.assistance / event.capacity) * 100;
+        if (percentage > highestAssistancePercentage) {
+            highestAssistancePercentage = parseFloat(percentage).toFixed(2);
+            nameHighAssistanceEvent = event.name;
+        }
+    });
+    return {
+        name: nameHighAssistanceEvent,
+        percentage: highestAssistancePercentage
+    };
+}
+
+export function lowestAssistance(array, currentDate) {
+    const pastEvents = filterPastEvents(array, currentDate);
+    let lowestAssistancePercentage = 100;
+    let nameLowAssistanceEvent = '';
+    pastEvents.forEach(event => {
+        const percentage = (event.assistance / event.capacity) * 100;
+        if (percentage < lowestAssistancePercentage) {
+            lowestAssistancePercentage = parseFloat(percentage).toFixed(2);
+            nameLowAssistanceEvent = event.name;
+        }
+    });
+    return {
+        name: nameLowAssistanceEvent,
+        percentage: lowestAssistancePercentage
+    };
+}
+
+export function highCapacity(array) {
+    let highestCapacity = 0;
+    let nameHighCapacityEvent = '';
+    array.forEach(event => {
+        if (event.capacity > highestCapacity) {
+            highestCapacity = event.capacity;
+            nameHighCapacityEvent = event.name;
+        }
+    });
+    return {
+        name: nameHighCapacityEvent,
+        capacity: highestCapacity
+    };
+}
+
+export function appendCell(location, content) {
+    const cell = document.createElement('td');
+    cell.innerHTML = content;
+    location.appendChild(cell);
+}
+
+export function statisticsEvents(array) {
+    const upcomingEventsCategory = [];
+    array.forEach(event => {
+        const categoryIndex = upcomingEventsCategory.findIndex(cat => cat.name === event.category);
+        const revenue = (event.assistance ? event.assistance : event.estimate) * event.price;
+        const estimate = event.estimate ? event.estimate : event.assistance;
+
+        if (categoryIndex === -1) {
+            upcomingEventsCategory.push({
+                name: event.category,
+                revenues: revenue,
+                capacity: event.capacity,
+                estimate: estimate
+            });
+        } else {
+            upcomingEventsCategory[categoryIndex].revenues += revenue;
+            upcomingEventsCategory[categoryIndex].capacity += event.capacity;
+            upcomingEventsCategory[categoryIndex].estimate += estimate;
+        }
+    });
+
+    return upcomingEventsCategory;
+}
+
+export function statisticsCells(arrayStatistics, location) {
+    location.innerHTML = '';
+    arrayStatistics.forEach(statistic => {
+        const row = document.createElement('tr');
+        row.classList.add('text-center');
+        row.innerHTML = `
+            <td>${statistic.name}</td>
+            <td>${statistic.revenues.toLocaleString('es-CO')}</td>            
+            <td>${parseFloat((statistic.estimate / statistic.capacity) * 100).toFixed(2)}%</td>`;
+        location.appendChild(row);
+    });
+}

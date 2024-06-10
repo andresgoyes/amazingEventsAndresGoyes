@@ -29,5 +29,4 @@ Revenues and percentage of assistance by category (past events)
 
 ◾Once you’re done with your work add, commit and push your project to the branch (sprint4) (done)
 
-◾Submit your sprint leaving the link to your GitHub repository (done) 
-new
+◾Submit your sprint leaving the link to your GitHub repository (done)

@@ -15,10 +15,10 @@ form.addEventListener("submit", (e) => {
 
 fetch(urlData)
     .then(response => response.json())
-    .then(data => {        
-        let pastEvents = data.events.filter(event => new Date(event.date) < new Date(data.currentDate));
+    .then(data => {
+        let pastEvents = globals.filterPastEvents(data.events, new Date(data.currentDate));
         globals.generateCategoryCheckboxes({ events: pastEvents }, boxCheck);
         globals.cards(pastEvents, cardsPlace);
         boxCheck.addEventListener("change", () => globals.filterEvents(inputSearch, { events: pastEvents }, cardsPlace));
         inputSearch.addEventListener("input", () => globals.filterEvents(inputSearch, { events: pastEvents }, cardsPlace));
-    })
+    })        

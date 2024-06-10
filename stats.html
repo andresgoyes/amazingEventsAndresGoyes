@@ -113,76 +113,93 @@
                 </button>
             </div>
         </section>
-        <div class="row justify-content-center py-5 w-100 tablas">
-            <div class="table-responsive col-md-10">
-                <table class="table table-striped">
-                    <thead class="table-dark">
-                        <tr>
-                            <th scope="col" colspan="3">
-                                Events Statistics
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Events with highest % of assistance</td>
-                            <td>Events with lowest % of assistance</td>
-                            <td>Events with large capacity</td>
-                        </tr>
-                        <tr>
-                            <td>.</td>
-                            <td>.</td>
-                            <td>.</td>
-                        </tr>
-                        <tr>
-                            <td>.</td>
-                            <td>.</td>
-                            <td>.</td>
-                        </tr>
-                        <tr>
-                            <th class="table-dark" scope="col" colspan="3">
-                                Upcoming events statistics by category
-                            </th>
-                        </tr>
-                        <tr>
-                            <td>Categories</td>
-                            <td>Revenues</td>
-                            <td>Percentage of assistance</td>
-                        </tr>
-                        <tr>
-                            <td>.</td>
-                            <td>.</td>
-                            <td>.</td>
-                        </tr>
-                        <tr>
-                            <td>.</td>
-                            <td>.</td>
-                            <td>.</td>
-                        </tr>
-                        <tr>
-                            <th class="table-dark" scope="col" colspan="3">
-                                Past events statistics by category
-                            </th>
-                        </tr>
-                        <tr>
-                            <td>Categories</td>
-                            <td>Revenues</td>
-                            <td>Percentage of assistance</td>
-                        </tr>
-                        <tr>
-                            <td>.</td>
-                            <td>.</td>
-                            <td>.</td>
-                        </tr>
-                        <tr>
-                            <td>.</td>
-                            <td>.</td>
-                            <td>.</td>
-                        </tr>
-                    </tbody>
-                </table>
+        <section class="p-5">
+            <div class="row justify-content-center py-5 w-100 tablas">
+                <div class="table-responsive col-md-10">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="table-dark" scope="col" colspan="3">Events statistics</th>                                
+                            </tr>                            
+                            <tr class="table-light">
+                                <td>Events with highest % of assistance</td>
+                                <td>Events with lowest % of assistance</td>
+                                <td>Events with larger capacity</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="text-center" id="eventName">
+                                <td>.</td>
+                                <td>.</td>
+                                <td>.</td>
+                            </tr>
+                            <tr class="text-center" id="eventNumbers">
+                                <td>.</td>
+                                <td>.</td>
+                                <td>.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
+            <div class="d-flex justify-content-evenly">
+                <div class="container-fluid">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="table-dark text-center" scope="col" colspan="3">Upcoming events statistics by category</th>                                
+                            </tr>
+                            <tr class="text-center table-light">
+                                <td>Categories</td>
+                                <td>Revenues</td>
+                                <td>Percentage of assistance</td>
+                            </tr>
+                        </thead>
+                        <tbody id="upcomingTBody">
+                            <tr>
+                                <td>.</td>
+                                <td>.</td>
+                                <td>.</td>
+                            </tr>
+                            <tr>
+                                <td>.</td>
+                                <td>.</td>
+                                <td>.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="container-fluid">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="table-dark text-center" scope="col" colspan="3">Past Events Statistics by category</th>                                                                
+                            </tr>
+                            <tr class="table-light text-center">
+                                <td>Categories</td>
+                                <td>Revenues</td>
+                                <td>Percentage of assistance</td>
+                            </tr>
+                        </thead>
+                        <tbody id="pastEventTBody">
+
+                            <tr class="text-center">
+                                <td>.</td>
+                                <td>.</td>
+                                <td>.</td>
+                            </tr>
+                            <tr class="text-center">
+                                <td>.</td>
+                                <td>.</td>
+                                <td>.</td>
+                            </tr>
+                        </tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
     </main>
     <footer class="d-flex justify-content-between align-items-center px-2">
         <div class="d-flex">
@@ -199,6 +216,7 @@
         <p class="pt-3 fs-6">Cohort 3 - Andres Goyes</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./modules/stats.js" type="module"></script>
 </body>
 
 </html>

@@ -15,8 +15,8 @@ form.addEventListener("submit", (e) => {
 
 fetch(urlData)
     .then(response => response.json())
-    .then(data => {        
-        let nextEvents = data.events.filter(event => new Date(event.date) > new Date(data.currentDate));
+    .then(data => {
+        let nextEvents = globals.filterUpcomingEvents(data.events, new Date(data.currentDate));
         globals.generateCategoryCheckboxes({ events: nextEvents }, boxCheck);
         globals.cards(nextEvents, cardsPlace);
         boxCheck.addEventListener("change", () => globals.filterEvents(inputSearch, { events: nextEvents }, cardsPlace));

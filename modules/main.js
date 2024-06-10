@@ -15,7 +15,7 @@ form.addEventListener("submit", (e) => {
 
 fetch(urlData)
     .then(response => response.json())
-    .then(data => {        
+    .then(data => {
         globals.generateCategoryCheckboxes(data, boxCheck);
         globals.cards(data.events, cardsPlace);
         boxCheck.addEventListener("change", () => globals.filterEvents(inputSearch, data, cardsPlace));
