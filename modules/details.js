@@ -8,7 +8,4 @@ fetch(urlData)
     .then(response => response.json())
     .then(data => {        
         globals.renderEvent(data.events, id, container);
-    })
-
-
-
+    });

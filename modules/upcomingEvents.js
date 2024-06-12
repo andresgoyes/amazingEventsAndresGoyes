@@ -21,5 +21,4 @@ fetch(urlData)
         globals.cards(nextEvents, cardsPlace);
         boxCheck.addEventListener("change", () => globals.filterEvents(inputSearch, { events: nextEvents }, cardsPlace));
         inputSearch.addEventListener("input", () => globals.filterEvents(inputSearch, { events: nextEvents }, cardsPlace));
-    })
-
+    });

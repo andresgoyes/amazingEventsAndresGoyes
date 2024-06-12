@@ -198,4 +198,4 @@ export function statisticsCells(arrayStatistics, location) {
             <td>${parseFloat((statistic.estimate / statistic.capacity) * 100).toFixed(2)}%</td>`;
         location.appendChild(row);
     });
-}
+};
